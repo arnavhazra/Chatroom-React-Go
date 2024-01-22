@@ -1,0 +1,21 @@
+/* Style for the login and sign-up forms */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .form input {
+    margin-bottom: 10px;
+  }
+  
+  .form button {
+    margin-top: 10px;
+  }
+  
+  /* Style for the error message */
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }

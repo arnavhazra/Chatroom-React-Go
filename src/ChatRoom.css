@@ -1,0 +1,39 @@
+/* Style for the chat room */
+.chat-room {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Style for each message */
+  .message {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the vote buttons and count */
+  .vote {
+    display: flex;
+    align-items: center;
+  }
+  
+  .vote button {
+    margin: 0 5px;
+  }
+  
+  /* Style for the message input field and send button */
+  .input-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .input-field input {
+    flex-grow: 1;
+    margin-right: 10px;
+  }

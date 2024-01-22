@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: new-chat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: new-chat
+  template:
+    metadata:
+      labels:
+        app: new-chat
+    spec:
+      containers:
+      - name: frontend
+        image: new-chat-frontend
+        ports:
+        - containerPort: 3000
+      - name: backend
+        image: new-chat-backend
+        ports:
+        - containerPort: 8080
+      - name: postgres
+        image: postgres:13
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_USER
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: postgres
+        - name: POSTGRES_DB
+          value: new-chat
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: new-chat
+spec:
+  selector:
+    app: new-chat
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+  type: LoadBalancer
